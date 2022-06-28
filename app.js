@@ -13,7 +13,7 @@ const port = 3000;
 
 const Prismic = require('@prismicio/client');
 const PrismicDOM = require('prismic-dom');
-const { application } = require('express');
+// const { application } = require('express');
 const UAParser = require('ua-parser-js');
 
 app.use(logger('dev'));
@@ -199,7 +199,14 @@ app.get('/detail/:uid', async (req, res) => {
     product,
   });
 });
+app.get("*", async (req, res) => {
+  const api = await initApi(req);
+  const defaults = await handleRequest(api);
+  res.render('pages/home', {
+    ...defaults,
+  });
+})
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`The app listening at http://localhost:${port}`);
 });

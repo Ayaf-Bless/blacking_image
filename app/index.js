@@ -15,6 +15,7 @@ import About from 'pages/About';
 import Collections from 'pages/Collections';
 import Home from 'pages/Home';
 import Detail from 'pages/Detail';
+import Contact from 'pages/Contact'
 
 class App {
   constructor() {
@@ -64,6 +65,7 @@ class App {
       collections: new Collections(),
       home: new Home(),
       detail: new Detail(),
+      contact: new Contact()
     };
 
     this.page = this.pages[this.template];
