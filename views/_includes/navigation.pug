@@ -1,0 +1,10 @@
+nav.navigation
+  a.navigation__link(href='/')=metadata.data.title
+   svg.navigation__link__icon(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 405.7 351.4")
+            path(fill="currentColor" d="M404.9,350.9H0.9L202.9,1L404.9,350.9z M202,349.2l98.1-169.9H103.8L202,349.2z")
+
+  ul.navigation__list
+    each item in navigation.data.list
+      li.navigation__list__item
+        a.navigation__list__link(href=Link(item.link))=item.text
+
