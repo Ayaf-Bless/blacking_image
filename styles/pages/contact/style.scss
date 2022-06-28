@@ -1,0 +1,49 @@
+//.contact {
+//  @extend %page;
+//
+//  // background: $color-cadet-blue;
+//  // color: $color-bright-grey;
+//}
+//.contact__wrapper {
+//  padding-top: 10rem
+//}
+//
+//.contact__title {
+//  @extend %title-100;
+//
+//  max-width: 126rem;
+//  margin: 0 auto;
+//  text-align: center;
+//
+//  @include media('<phone') {
+//    max-width: 67.7rem;
+//  }
+//}
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+
+  div{
+    display: flex;
+    flex-direction: column;
+  }
+}
+.contact__input {
+  width: 50rem;
+  padding: 3rem;
+  height: 5rem;
+  border: 0;
+  border-bottom: solid .6px #979797;
+
+
+}
+.contact__input:focus {
+  border-bottom: solid 1px #252525;
+}
+.contact__text {
+  width: 50rem;
+  padding: 3rem;
+  height: 25rem;
+}
