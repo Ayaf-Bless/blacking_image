@@ -47,9 +47,6 @@ const HandleLinkResolver = (doc) => {
   if (doc.type === 'contact') {
     return `/contact`;
   }
-
-  // Default to homepage
-  return '/';
 };
 
 // Middleware to inject prismic context
@@ -199,13 +196,13 @@ app.get('/detail/:uid', async (req, res) => {
     product,
   });
 });
-app.get("*", async (req, res) => {
+app.get('*', async (req, res) => {
   const api = await initApi(req);
   const defaults = await handleRequest(api);
   res.render('pages/home', {
     ...defaults,
   });
-})
+});
 
 app.listen(port, () => {
   console.log(`The app listening at http://localhost:${port}`);
