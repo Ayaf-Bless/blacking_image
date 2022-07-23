@@ -1,49 +1,55 @@
-//.contact {
-//  @extend %page;
-//
-//  // background: $color-cadet-blue;
-//  // color: $color-bright-grey;
-//}
-//.contact__wrapper {
-//  padding-top: 10rem
-//}
-//
-//.contact__title {
-//  @extend %title-100;
-//
-//  max-width: 126rem;
-//  margin: 0 auto;
-//  text-align: center;
-//
-//  @include media('<phone') {
-//    max-width: 67.7rem;
-//  }
-//}
-.contact__form {
+.form {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  margin-top: 2rem;
-
-  div{
-    display: flex;
-    flex-direction: column;
+  justify-content: center;
+  &__group {
+    width: 100%;
+    margin-left: 10%;
   }
-}
-.contact__input {
-  width: 50rem;
-  padding: 3rem;
-  height: 5rem;
-  border: 0;
-  border-bottom: solid .6px #979797;
 
+  &__input {
+    font-size: 1.5rem;
+    font-family: inherit;
+    color: $color-bright-grey;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: rbga($color-bright-grey, 0.5);
+    border: none;
+    border-bottom: 3px solid transparent;
+    width: 90%;
+    display: block;
+    transition: all 0.3s;
 
-}
-.contact__input:focus {
-  border-bottom: solid 1px #252525;
-}
-.contact__text {
-  width: 50rem;
-  padding: 3rem;
-  height: 25rem;
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba(#000, 0.1);
+      border-bottom: 3px solid rgb(77, 246, 77);
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid $color-quicksand;
+    }
+
+    &::-webkit-input-placeholder {
+      color: #000;
+    }
+  }
+
+  &__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    display: block;
+    transition: all 0.3s;
+    align-self: flex-start;
+  }
+
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
 }
