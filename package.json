@@ -3,14 +3,17 @@
   "version": "1.0.0",
   "description": "A website portfolio for a photographer",
   "scripts": {
-    "backend:build": "node app.js",
+    "start": "node app.js",
     "backend:development": "nodemon app.js",
     "frontend:build": "webpack --progress --config webpack.config.build.js",
     "frontend:development": "webpack serve --progress --config webpack.config.development.js",
-    "start": "concurrently --kill-others \"npm run backend:development\" \"npm run frontend:development\""
+    "start:dev": "concurrently --kill-others \"npm run backend:development\" \"npm run frontend:development\""
   },
   "repository": {
     "type": "git"
+  },
+  "engines": {
+    "node": "14.x"
   },
   "keywords": [],
   "author": "Bless_ayaf",
@@ -55,6 +58,7 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.6.2",
     "@prismicio/client": "^5.1.0",
     "body-parser": "^1.19.0",
     "dotenv": "^10.0.0",
