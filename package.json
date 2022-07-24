@@ -12,9 +12,6 @@
   "repository": {
     "type": "git"
   },
-  "engines": {
-    "node": "14.x"
-  },
   "keywords": [],
   "author": "Bless_ayaf",
   "license": "ISC",
